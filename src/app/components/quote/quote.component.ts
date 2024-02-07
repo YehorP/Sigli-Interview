@@ -13,7 +13,7 @@ export class QuoteComponent {
   rateForm = new FormGroup({rate: new FormControl<number | null>(null, [Validators.required])});
  
   handleSubmit(): void {
-   this.quote.rate = this.rateForm.value.rate as number;
+   this.quote.rating = this.rateForm.value.rate as number;
   }
 
 
