@@ -27,7 +27,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     AppRoutingModule,
     MatCardModule,
     MatIconModule,
-    MatIconModule,
     MatFormFieldModule, 
     MatSelectModule, 
     MatInputModule, 

@@ -2,6 +2,11 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { QuoteComponent } from './quote.component';
 import { By } from '@angular/platform-browser';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('QuoteComponent', () => {
   let component: QuoteComponent;
@@ -10,7 +15,14 @@ describe('QuoteComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [QuoteComponent],
-      imports: [ReactiveFormsModule]
+      imports: [    
+        MatIconModule,
+        MatFormFieldModule, 
+        MatSelectModule, 
+        MatInputModule, 
+        ReactiveFormsModule,
+        NoopAnimationsModule
+      ]
     }).compileComponents();
   });
 
