@@ -1,0 +1,25 @@
+<div class="quote-card" *ngIf="quote">
+    <h2 class="quote-text">{{ quote.quote }}</h2>
+    <div class="info-actions">
+        <p class="author">- {{ quote.author }}</p>
+        <form *ngIf="quote.rate === null || quote.rate === undefined; else elseBlock" [formGroup]="rateForm" (ngSubmit)="handleSubmit()">
+            <mat-form-field>
+                <mat-label>Cars</mat-label>
+                <select matNativeControl formControlName="rate">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </mat-form-field>
+              <button mat-button color="primary">Rate</button>
+        </form>
+        <ng-template #elseBlock>
+            <p>Rated: {{quote.rate}}/5</p>
+        </ng-template>
+        <button mat-button color="primary" (click)="shareQuote()"><mat-icon>share</mat-icon></button>
+    </div>
+  
+    
+</div>

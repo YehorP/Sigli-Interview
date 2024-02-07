@@ -2,10 +2,7 @@
   <app-quotes-slider [quotesList]="quotesList"></app-quotes-slider>
   <h1>Quote of the day</h1>
   <div class="quote-of-the-day-container" *ngIf="quoteOfTheDay">
-    <div class="quote-card quote-of-the-day">
-      <h2 class="quote-text">{{ quoteOfTheDay.quote }}</h2>
-      <p class="author">- {{ quoteOfTheDay.author }}</p>
-    </div>
+    <app-quote [quote]="quoteOfTheDay"></app-quote>
   </div>
   <button mat-button color="primary" (click)="getQuoteOfTheDay()">Generate new quote of the day</button>
 </div>
