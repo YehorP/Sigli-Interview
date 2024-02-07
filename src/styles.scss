@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.quote-card {
+    max-width: 400px;
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .quote-text {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+  
+  .author {
+    font-style: italic;
+    font-size: 14px;
+    color: #555;
+  }

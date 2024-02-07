@@ -1,0 +1,10 @@
+<div class="quotes-slider" *ngIf="quotes">
+    <button mat-button color="primary" (click)="prevQuote()"><mat-icon>arrow_left</mat-icon></button>
+    <ng-container *ngFor="let quote of quotes; let i=index">
+      <div class="quote-card" *ngIf="i === sliderQuoteIndex">
+        <h2 class="quote-text">{{ quote?.quote }}</h2>
+        <p class="author">- {{ quote?.author }}</p>
+      </div>
+    </ng-container>
+    <button mat-button color="primary" (click)="nextQuote()"><mat-icon>arrow_right</mat-icon></button>
+</div>
