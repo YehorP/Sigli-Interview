@@ -1,19 +1,17 @@
-import { Injectable } from '@angular/core';
-import { Observable, fromEvent, map, merge, of } from 'rxjs';
+import { Injectable } from '@angular/core'
+import { Observable, fromEvent, map, merge, of } from 'rxjs'
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root',
 })
 export class NetworkStatusService {
+    constructor() {}
 
-  constructor() { }
-
-  checkNetworkStatus(): Observable<boolean> {
-    return merge(
-      of(null),
-      fromEvent(window, 'online'),
-      fromEvent(window, 'offline')
-    )
-    .pipe(map(() => navigator.onLine))
-  }
+    checkNetworkStatus(): Observable<boolean> {
+        return merge(
+            of(null),
+            fromEvent(window, 'online'),
+            fromEvent(window, 'offline')
+        ).pipe(map(() => navigator.onLine))
+    }
 }

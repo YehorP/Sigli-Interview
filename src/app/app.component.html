@@ -1,8 +1,10 @@
-<div class="wrapper">
-  <app-quotes-slider [quotesList]="quotesList"></app-quotes-slider>
-  <h1>Quote of the day</h1>
-  <div class="quote-of-the-day-container" *ngIf="quoteOfTheDay">
-    <app-quote [quote]="quoteOfTheDay"></app-quote>
-  </div>
-  <button mat-button color="primary" (click)="getQuoteOfTheDay()">Generate new quote of the day</button>
+<div class="wrapper" *ngIf="quotesList | async as quotes">
+    <app-quotes-slider [quotesList]="quotes"></app-quotes-slider>
+    <h1>Quote of the day</h1>
+    <div class="quote-of-the-day-container">
+        <app-quote [quote]="quoteOfTheDay"></app-quote>
+    </div>
+    <button mat-button color="primary" (click)="getQuoteOfTheDay(quotes)">
+        Generate new quote of the day
+    </button>
 </div>
